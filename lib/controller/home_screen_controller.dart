@@ -5,6 +5,7 @@ import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:techorrawebsite/model/clientsreviewmodel.dart';
 import 'package:techorrawebsite/model/companymodel.dart';
+import 'package:techorrawebsite/model/education_model.dart';
 import 'package:techorrawebsite/model/experince_model.dart';
 import 'package:techorrawebsite/model/itsolutionmodel.dart';
 import 'package:techorrawebsite/model/mapmodel.dart';
@@ -18,6 +19,7 @@ import 'package:techorrawebsite/model/user_model.dart';
 import 'package:techorrawebsite/view/about_us_screen.dart';
 import 'package:techorrawebsite/view/contact_us.dart';
 import 'package:techorrawebsite/view/cover_screen.dart';
+import 'package:techorrawebsite/view/education_screen.dart';
 import 'package:techorrawebsite/view/our_services.dart';
 import 'package:techorrawebsite/view/ourteam.dart';
 import 'package:techorrawebsite/view/portfolio.dart';
@@ -71,7 +73,8 @@ class HomeScreenController extends GetxController {
     "Home",
     "About",
     "Experience",
-    "Tools",
+    "Education",
+    // "Tools",
     "Services",
     "Portfolio",
     "Connect",
@@ -102,7 +105,8 @@ class HomeScreenController extends GetxController {
     CoverScreen(),
     AboutUsScreen(),
     TestimonialScreen(),
-    OurTeam(),
+    EducationScreen(),
+    // OurTeam(),
     OurServicesScreen(),
     Portfolio(),
     ContactUs()
@@ -189,6 +193,7 @@ class HomeScreenController extends GetxController {
   Experience experienceModel;
   List<Experience> experiences = [];
   List<ToolsModel> toolsList = [];
+  List<EducationModel> educationList = [];
 
   //OLD CODE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
   getCollectionsClientReview() async {
@@ -264,6 +269,17 @@ class HomeScreenController extends GetxController {
     snap.docs.forEach((document) {
       ToolsModel tmm = new ToolsModel.fromDocumentSnapShot(document);
       toolsList.add(tmm);
+    });
+    update(['teamMember']);
+  }
+
+  getCollectionEducationModel() async {
+    QuerySnapshot snap =
+        await FirebaseFirestore.instance.collection('education').get();
+    educationList.clear();
+    snap.docs.forEach((document) {
+      EducationModel tmm = new EducationModel.fromDocumentSnap(document);
+      educationList.add(tmm);
     });
     update(['teamMember']);
   }

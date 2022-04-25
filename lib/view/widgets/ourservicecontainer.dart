@@ -4,20 +4,24 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:techorrawebsite/model/itsolutionmodel.dart';
 
 import '../../responsive.dart';
+
 class OurServiceContainer extends StatelessWidget {
   //...........................Variables........................................
-  @required ItSolutionModel itSolutionModel;
+  @required
+  ItSolutionModel itSolutionModel;
 
-  OurServiceContainer(
-      this.itSolutionModel);
+  OurServiceContainer(this.itSolutionModel);
   //...........................UI Container in our service widget...............
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8,),
+      padding: EdgeInsets.symmetric(
+        vertical: 8,
+        horizontal: 8,
+      ),
       child: Container(
-        height: (Responsive.isDesktop(context))? 320 : 310,
-        width: (Responsive.isDesktop(context))? 350 : 220,
+        height: (Responsive.isDesktop(context)) ? 260 : 240,
+        width: (Responsive.isDesktop(context)) ? 300 : 220,
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -31,34 +35,61 @@ class OurServiceContainer extends StatelessWidget {
         ),
         child: Column(
           children: [
-            if(Responsive.isDesktop(context))
-              SizedBox(height: 20.h,),
-            if(!Responsive.isDesktop(context))
-              SizedBox(height: 10.h,),
-            Center(child: SvgPicture.network(itSolutionModel.img, color: Colors.deepOrange, height: 75.h,width: 75.w,)),
-            if(Responsive.isDesktop(context))
-              SizedBox(height: 20.h,),
-            if(!Responsive.isDesktop(context))
-              SizedBox(height: 10.h,),
+            if (Responsive.isDesktop(context))
+              SizedBox(
+                height: 20.h,
+              ),
+            if (!Responsive.isDesktop(context))
+              SizedBox(
+                height: 10.h,
+              ),
             Center(
-              child: Text(itSolutionModel.title,
-                maxLines: 2, overflow: TextOverflow.ellipsis,
+                child: SvgPicture.network(
+              itSolutionModel.img,
+              color: Colors.deepOrange,
+              height: 75.h,
+              width: 75.w,
+            )),
+            if (Responsive.isDesktop(context))
+              SizedBox(
+                height: 20.h,
+              ),
+            if (!Responsive.isDesktop(context))
+              SizedBox(
+                height: 10.h,
+              ),
+            Center(
+              child: Text(
+                itSolutionModel.title,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 22, color: Colors.black, fontWeight: FontWeight.bold,),
+                  fontSize: 22,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-            if(Responsive.isDesktop(context))
-              SizedBox(height: 20.h,),
-            if(!Responsive.isDesktop(context))
-              SizedBox(height: 10.h,),
+            if (Responsive.isDesktop(context))
+              SizedBox(
+                height: 20.h,
+              ),
+            if (!Responsive.isDesktop(context))
+              SizedBox(
+                height: 10.h,
+              ),
             Container(
-              height: 110,
-              width: (Responsive.isDesktop(context))? 330 : 200,
+              height: 102,
+              width: (Responsive.isDesktop(context)) ? 290 : 200,
               child: Text(
                 itSolutionModel.description,
-                maxLines: 5, overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontSize: 16,),
+                textAlign: TextAlign.center,
+                maxLines: 6,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontSize: 14,
+                ),
               ),
             ),
           ],

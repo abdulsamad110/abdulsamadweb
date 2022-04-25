@@ -12,8 +12,8 @@ class PortfolioCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ((Responsive.isDesktop(context))? 600 : 400),
-      width: ((Responsive.isDesktop(context))? 450.w : 310),
+      height: ((Responsive.isDesktop(context)) ? 630 : 500),
+      width: ((Responsive.isDesktop(context)) ? 460.w : 330),
       decoration: BoxDecoration(
         color: Colors.grey[200].withOpacity(0.8),
         borderRadius: BorderRadius.circular(10.0),
@@ -32,38 +32,48 @@ class PortfolioCard extends StatelessWidget {
             padding: EdgeInsets.only(top: 10.h),
             child: Container(
               height: 30,
-              width: 200.w,
+              width: 220.w,
               decoration: BoxDecoration(
-                /*color: Colors.yellowAccent,*/
-              ),
-              child:
-              Center(
-                child: Text(portfolioModel.title,
+                  /*color: Colors.yellowAccent,*/
+                  ),
+              child: Center(
+                child: Text(
+                  portfolioModel.title,
                   style: TextStyle(
-                    fontSize: 22, color: Colors.black, fontWeight: FontWeight.bold,),
+                    fontSize: 18,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 15.w,),
+            padding: EdgeInsets.symmetric(
+              vertical: 5.h,
+              horizontal: 15.w,
+            ),
             child: ClipRRect(
               borderRadius: new BorderRadius.circular(10.0),
               child: Image(
                 fit: BoxFit.fill,
                 image: NetworkImage(portfolioModel.pic),
-                height: ((Responsive.isDesktop(context))? 300 : 260),
-                width: ((Responsive.isDesktop(context))? 420.w : 300),
+                height: ((Responsive.isDesktop(context)) ? 280 : 240),
+                width: ((Responsive.isDesktop(context)) ? 400.w : 280),
               ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(6.0),
-            child: Text(portfolioModel.description,
-              maxLines: 6, overflow: TextOverflow.ellipsis,
+            child: Text(
+              portfolioModel.description,
+              maxLines: 6,
+              overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: TextStyle(
-                fontSize: 16, color: Colors.grey[600],),
+                fontSize: 14,
+                color: Colors.grey[600],
+              ),
             ),
           ),
         ],

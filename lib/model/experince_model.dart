@@ -6,18 +6,21 @@ class Experience {
     this.picture,
     this.responsibilities,
     this.duration,
+    this.designation,
   });
 
   String name;
   String picture;
   String responsibilities;
   String duration;
+  String designation;
 
   factory Experience.fromDocumentSnapShot(DocumentSnapshot doc) => Experience(
         name: doc["name"],
         picture: doc["picture"],
         responsibilities: doc["responsibilities"],
         duration: doc["duration"],
+        designation: doc["designation"],
       );
 
   Map<String, dynamic> toMap() => {
@@ -25,5 +28,6 @@ class Experience {
         "picture": picture,
         "responsibilities": responsibilities,
         "duration": duration,
+        "designation": designation,
       };
 }

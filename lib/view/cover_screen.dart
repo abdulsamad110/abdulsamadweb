@@ -52,7 +52,7 @@ class CoverScreen extends StatelessWidget {
                                   ? Image.network(
                                       homeScreenController.userModel.picture,
                                     )
-                                  : Image.asset('assets/sam.png'),
+                                  : Image.asset('assets/sam.jpg'),
                             ),
                           ),
                           // ========== title  ===========
@@ -61,7 +61,7 @@ class CoverScreen extends StatelessWidget {
                             child: Text(
                               (homeScreenController.userModel != null)
                                   ? homeScreenController.userModel.name
-                                  : "Loading ..... ",
+                                  : "Abdul Samad",
                               style: TextStyle(
                                   fontSize:
                                       (Responsive.isDesktop(context) ? 60 : 40),
@@ -78,7 +78,7 @@ class CoverScreen extends StatelessWidget {
                               child: Text(
                                 (homeScreenController.userModel != null)
                                     ? homeScreenController.userModel.about
-                                    : "Loading ..... ",
+                                    : "As, young and energetic individual with a desire to move for the betterment of society, and to further his own latent potentials. Having an ability and aptitude to serve in an organization that will allow development of my existing communication skills and leadership qualities.",
                                 maxLines: 8,
                                 overflow: TextOverflow.ellipsis,
                                 textAlign: TextAlign.left,

@@ -23,11 +23,7 @@
   <meta name="apple-mobile-web-app-title" content="techorrawebsite">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-  <!-- FAVICON -->
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <title>abdulsamad</title>
+  <title>techorrawebsite</title>
   <link rel="manifest" href="manifest.json">
 </head>
 <body>

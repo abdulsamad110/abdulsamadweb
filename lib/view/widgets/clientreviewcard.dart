@@ -14,15 +14,29 @@ class ClientReviewCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 420,
+      height: 440,
       width: (Responsive.isDesktop(context)) ? 310.w : 270,
       decoration: BoxDecoration(
         color: Colors.grey[200],
       ),
       child: Column(
         children: [
+          SizedBox(
+            height: 8.h,
+          ),
+          Center(
+            child: Text(
+              experienceModel.designation,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: (Responsive.isDesktop(context)) ? 18 : 15,
+                color: Colors.black,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
+          ),
           Padding(
-            padding: EdgeInsets.only(top: 10),
+            padding: EdgeInsets.only(top: 6),
             child: Text(experienceModel.duration,
                 style: TextStyle(
                     fontSize: (Responsive.isDesktop(context)) ? 15 : 12,
@@ -31,7 +45,7 @@ class ClientReviewCard extends StatelessWidget {
                     fontStyle: FontStyle.italic)),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10, left: 10, right: 10),
+            padding: EdgeInsets.only(top: 8, left: 8, right: 8),
             child: Container(
               //height: (Responsive.isResponsiveHeight(context))? 140.h : 150,
               width: 290,
@@ -54,8 +68,8 @@ class ClientReviewCard extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.symmetric(
-              vertical: 25,
-              horizontal: 25,
+              vertical: 20,
+              horizontal: 20,
             ),
             child: ClipRRect(
               borderRadius: new BorderRadius.circular(100.0),
@@ -70,15 +84,16 @@ class ClientReviewCard extends StatelessWidget {
           Center(
             child: Text(
               experienceModel.name,
+              textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 26,
+                fontSize: (Responsive.isDesktop(context)) ? 24 : 18,
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 10.h,
           ),
         ],
       ),

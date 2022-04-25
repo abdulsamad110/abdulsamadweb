@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
         designSize: Size(1366, 768),
         builder: () => GetMaterialApp(
-            title: "Abdul Samad - Your Tech Companion",
+            title: "Abdul Samad",
             debugShowCheckedModeBanner: false,
             home: HomeScreen()));
   }

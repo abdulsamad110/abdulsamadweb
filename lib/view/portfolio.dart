@@ -9,18 +9,16 @@ import 'package:techorrawebsite/view/widgets/portfoliocard.dart';
 
 import '../responsive.dart';
 
-
 class Portfolio extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeScreenController>(
         id: 'portfolio',
         builder: (homeScreenController) {
-        return AutoScrollTag(
-            key: ValueKey(4),
+          return AutoScrollTag(
+            key: ValueKey(5),
             controller: homeScreenController.controller,
-            index: 4,
+            index: 5,
             child: Container(
               //height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
@@ -28,38 +26,57 @@ class Portfolio extends StatelessWidget {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(top: 60),
-                    child: Center(child: Text('PORTFOLIO', style: TextStyle(fontSize: 22, color: Colors.deepOrange, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),)),
+                    child: Center(
+                        child: Text(
+                      'PORTFOLIO',
+                      style: TextStyle(
+                          fontSize: 22,
+                          color: Colors.deepOrange,
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic),
+                    )),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 30.h),
-                    child: Center(child: Text('Our Work', style: TextStyle(fontSize: (Responsive.isDesktop(context))? 38.sp : 30, color: Colors.black, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),)),
+                    child: Center(
+                        child: Text(
+                      'Our Work',
+                      style: TextStyle(
+                          fontSize:
+                              (Responsive.isDesktop(context)) ? 38.sp : 30,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic),
+                    )),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 30.h),
-                    child: CarouselSlider(items: homeScreenController.portfolios.map((i) {
-                      return Builder(
-                        builder: (BuildContext context) {
-                          return Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              InkWell(
-                                onTap: () {},
-                                onHover: (hovering){
-                                  if(hovering){
-                                    homeScreenController.portfolioStartStop = false;
-                                  }
-                                  else{
-                                    homeScreenController.portfolioStartStop = true;
-                                  }
-                                  homeScreenController.update(['portfolio']);
-                                },
+                    child: CarouselSlider(
+                      items: homeScreenController.portfolios.map((i) {
+                        return Builder(
+                          builder: (BuildContext context) {
+                            return Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                InkWell(
+                                  onTap: () {},
+                                  onHover: (hovering) {
+                                    if (hovering) {
+                                      homeScreenController.portfolioStartStop =
+                                          false;
+                                    } else {
+                                      homeScreenController.portfolioStartStop =
+                                          true;
+                                    }
+                                    homeScreenController.update(['portfolio']);
+                                  },
                                   child: PortfolioCard(i),
-                              ),
-                            ],
-                          );
-                        },
-                      );
-                    }).toList(),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      }).toList(),
                       options: CarouselOptions(
                         autoPlay: homeScreenController.portfolioStartStop,
                         height: 450,
@@ -67,7 +84,8 @@ class Portfolio extends StatelessWidget {
                         autoPlayAnimationDuration: Duration(milliseconds: 1000),
                         autoPlayCurve: Curves.fastOutSlowIn,
                         enableInfiniteScroll: true,
-                        viewportFraction: (Responsive.isDesktop(context))? 0.4 : 1.2,
+                        viewportFraction:
+                            (Responsive.isDesktop(context)) ? 0.4 : 1.2,
                         scrollPhysics: NeverScrollableScrollPhysics(),
                       ),
                     ),
@@ -75,8 +93,7 @@ class Portfolio extends StatelessWidget {
                 ],
               ),
             ),
-        );
-      }
-    );
+          );
+        });
   }
 }

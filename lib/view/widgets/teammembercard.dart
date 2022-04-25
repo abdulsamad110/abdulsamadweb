@@ -21,10 +21,10 @@ class TeamMemberCard extends StatelessWidget {
         horizontal: 6,
       ),
       child: AnimatedContainer(
-        height: check ? 400 : 360,
+        height: check ? 350 : 320,
         width: check
-            ? ((Responsive.isDesktop(context)) ? 280.w : 220)
-            : ((Responsive.isDesktop(context)) ? 270.w : 210),
+            ? ((Responsive.isDesktop(context)) ? 200.w : 200)
+            : ((Responsive.isDesktop(context)) ? 200.w : 170),
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -45,10 +45,10 @@ class TeamMemberCard extends StatelessWidget {
               child: Center(
                 child: Image(
                   image: NetworkImage(tool.picture),
-                  height: 280,
+                  height: 220,
                   width: check
-                      ? ((Responsive.isDesktop(context)) ? 270.w : 220)
-                      : ((Responsive.isDesktop(context)) ? 250.w : 210),
+                      ? ((Responsive.isDesktop(context)) ? 180.w : 160)
+                      : ((Responsive.isDesktop(context)) ? 180.w : 160),
                 ),
               ),
             ),

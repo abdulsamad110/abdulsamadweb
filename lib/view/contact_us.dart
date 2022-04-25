@@ -8,19 +8,16 @@ import 'package:techorrawebsite/view/widgets/contactusview1.dart';
 import 'package:techorrawebsite/view/widgets/socialmediaconnect.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class ContactUs extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeScreenController>(
         id: 'homePage',
         builder: (homeScreenController) {
-        return AutoScrollTag(
-            key: ValueKey(5),
+          return AutoScrollTag(
+            key: ValueKey(6),
             controller: homeScreenController.controller,
-            index: 5,
+            index: 6,
             child: Container(
               //height: (Responsive.isResponsiveHeight(context))? MediaQuery.of(context).size.height : 600,
               width: MediaQuery.of(context).size.width,
@@ -28,43 +25,19 @@ class ContactUs extends StatelessWidget {
                 color: Colors.white,
               ),
               child: Padding(
-                padding: EdgeInsets.only(top: 80),
+                padding: EdgeInsets.only(top: 160),
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          children: [
-                            ContactUsView1(),
-                            if(!Responsive.isDesktop(context))
-                              Padding(
-                                padding: EdgeInsets.only(left: 30),
-                                child: Center(child: ContactUsMap(23, 34)),
-                              ),
-
-                          ],
-                        ),
-                        if(Responsive.isDesktop(context))
-                        Padding(
-                          padding: (Responsive.isDesktop(context))? EdgeInsets.only(top: 60.h, right: 70.w) : EdgeInsets.zero,
-                          child: ContactUsMap(32, 23),
-                        ),
-                      ],
+                    ContactUsView1(),
+                    SizedBox(
+                      height: 120.h,
                     ),
-                    Center(
-                      child:
-                      Padding(
-                        padding: EdgeInsets.only(top: 80.h),
-                        child: SocialMediaConnect(),
-                      ),
-                    ),
+                    SocialMediaConnect(),
                   ],
                 ),
               ),
             ),
-        );
-      }
-    );
+          );
+        });
   }
 }

@@ -20,6 +20,7 @@ class HomeScreen extends StatelessWidget {
     hController.getCollectionsClientReview();
     // hController.getCollectionsTeamMember();
     hController.getCollectionToolsModel();
+    hController.getCollectionEducationModel();
     // hController.getSkillsList();
     hController.getCollectionsExperience();
     hController.getCollectionsPortfolio();
