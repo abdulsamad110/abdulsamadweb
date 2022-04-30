@@ -14,7 +14,7 @@ class ClientReviewCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 440,
+      height: 445,
       width: (Responsive.isDesktop(context)) ? 310.w : 270,
       decoration: BoxDecoration(
         color: Colors.grey[200],

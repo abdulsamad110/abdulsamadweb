@@ -29,18 +29,19 @@ class PortfolioCard extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.only(top: 10.h),
+            padding: EdgeInsets.only(top: 8.h),
             child: Container(
-              height: 30,
-              width: 220.w,
+              height: 50,
+              width: 280.w,
               decoration: BoxDecoration(
                   /*color: Colors.yellowAccent,*/
                   ),
               child: Center(
                 child: Text(
                   portfolioModel.title,
+                  textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: (Responsive.isDesktop(context)) ? 18 : 15,
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                   ),
@@ -50,8 +51,8 @@ class PortfolioCard extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.symmetric(
-              vertical: 5.h,
-              horizontal: 15.w,
+              vertical: 4.h,
+              horizontal: 10.w,
             ),
             child: ClipRRect(
               borderRadius: new BorderRadius.circular(10.0),
@@ -64,7 +65,7 @@ class PortfolioCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(6.0),
+            padding: const EdgeInsets.all(4.0),
             child: Text(
               portfolioModel.description,
               maxLines: 6,

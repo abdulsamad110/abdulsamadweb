@@ -27,6 +27,7 @@ class ContactUs extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.only(top: 160),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ContactUsView1(),
                     SizedBox(
