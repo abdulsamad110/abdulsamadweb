@@ -36,7 +36,7 @@ class _SocialMediaConnectState extends State<SocialMediaConnect> {
     }
   }
 
-  void onClicklinkedin() async {
+  void onClickLinkedin() async {
     const url = 'www.linkedin.com/in/abdul-samad-979443215';
     if (await canLaunch(url)) {
       await launch(url);
@@ -128,7 +128,7 @@ class _SocialMediaConnectState extends State<SocialMediaConnect> {
                     'assets/linkedin.svg',
                   ),
                   onPressed: () {
-                    onClicklinkedin();
+                    onClickLinkedin();
                   },
                 ),
               ),
